@@ -6,14 +6,16 @@
     -Tripulacion
     """,
     'license':'LGPL-3',
-    'category': 'Training',
-    'depends':['base'],
-    'data'=[
-        
-    ],
-    'version':'0.1',
-    'demo'=[
-        
-    ],
     'author'='Paco',
+    'version':'0.1',
+    'category': 'Training',
+    'depends': ['base'],
+    'data':[
+        
+    ],
+    
+    'demo':[
+        
+    ],
+    
 }
