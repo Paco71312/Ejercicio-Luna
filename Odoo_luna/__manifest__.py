@@ -6,7 +6,7 @@
     -Tripulacion
     """,
     'license':'LGPL-3',
-    'author'='Paco',
+    'author':'Paco',
     'version':'0.1',
     'category': 'Training',
     'depends': ['base'],
