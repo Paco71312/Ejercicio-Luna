@@ -14,7 +14,7 @@
         
     ],
     
-    'demo':[
+    'demo':['demo/nave_demo.xml',
         
     ],
     
