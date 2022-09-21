@@ -13,7 +13,6 @@
     'data':[
         
     ],
-    
     'demo':['demo/nave_demo.xml',
         
     ],
