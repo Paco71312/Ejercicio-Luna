@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.actions.act_window"  id ="nave_list_action">
+            <field name="name">Nave</field>
+            <field name="res_model">nave.espacial</field>
+            <field name="view_mode">tree,form,pivot</field>
+            <field name="help" type ="html">
+                <p>
+                    Este es un mensaje de ayuda para demostara mi modelo de nave espacial 
+                </p>
+            </field>            
+        </record>
+
+        <menuitem name="Programa espacial odoo"
+                  id="menu_nave"
+                  sequence="1"
+                  web_icon="Odoo_luna,descripcion/nave.png"/>
+         <menuitem  id="menu_nave_sub1" name="Espacio"  parent="menu_nave" sequence="2"/>
+         <menuitem  id="menu_nave_sub2" name="Submenu"  parent="menu_nave_sub1" sequence="3" action="nave_list_action"/>
+    </data>
+</odoo>
