@@ -10,7 +10,7 @@
     'version':'0.1',
     'category': 'Training',
     'depends': ['base'],
-    'data':[
+    'data':['security/nave_security.xml','security/ir.model.access.csv',
         
     ],
     'demo':['demo/nave_demo.xml',

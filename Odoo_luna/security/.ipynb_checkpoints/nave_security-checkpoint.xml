@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!--Grupo admin-->
+    <record id="grupo_nave_admin" model="res.groups" >
+        <field name='name'>Administador de la nave </field>        
+    </record>
+    
+     <record id="only_active_modify" model="ir.rule">
+        <field name= "name"> solo activo cuando la nave es modficada</field>
+        <field name="perm_read" eval="0"/>
+        <field name="perm_write" eval="1"/>
+        <field name="perm_create" eval="0"/>
+        <field name="perm_unlink" eval="1"/>
+        <field name="domain_force">[('active','=','True')]</field>
+        <field name="model_id" ref="model_nave_espacial"/>
+    </record>
+    <!--Grupo todo menos borrar-->
+    <record id="grupo_nave_tripulacion" model="res.groups">
+        <field name='name'>Tripulacion de la nave </field>
+    </record>
+</odoo>
