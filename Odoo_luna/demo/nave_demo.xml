@@ -9,5 +9,13 @@
            <field name="numero_de_pasajeros">150</field>
            <field name="estatus_de_la_nave">Activa</field>
         </record>       
+        <record model="nave.espacial"  id ="nave_101">
+           <field name="name">Challenger</field> 
+           <field name="dimensiones_de_la_nave">150m</field> 
+           <field name="tipo_de_combustible">gasolina</field>  
+           <field name="tipo_de_nave">transbordador</field> 
+           <field name="numero_de_pasajeros">150</field>
+           <field name="estatus_de_la_nave">Activa</field>
+        </record>
     </data>
 </odoo>

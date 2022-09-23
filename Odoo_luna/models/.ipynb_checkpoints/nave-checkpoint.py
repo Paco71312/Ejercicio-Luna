@@ -20,5 +20,5 @@ class Nave(models.Model):
     @api.constrains('ancho', 'largo')
     def _checar_ancho(self):
         if self.ancho > self.largo or self.ancho == self.largo:
-            raise UserError(f' SIEMPRE: El ancho {self.ancho} debe ser menor, tampoco igual que el largo {self.largo}')
+            raise UserError(f' SIEMPRE: El ancho: {self.ancho}, debe ser menor, tampoco igual que el largo: {self.largo}')
             
