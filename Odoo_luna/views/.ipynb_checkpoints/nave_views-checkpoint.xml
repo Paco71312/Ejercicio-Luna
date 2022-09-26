@@ -25,6 +25,11 @@
                                 <field name="largo"/>
                             </group>   
                         </group>
+                        <notebook>
+                            <page string="Misiones">
+                                <field name="mision_id"/>
+                            </page>
+                        </notebook>
                     </sheet>
                 </form>
             </field>

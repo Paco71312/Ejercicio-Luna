@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="mision_view_form">
+            <field name="name">nave.mision.form</field>
+            <field name="model">nave.mision</field>
+            <field name="arch" type="xml">
+                <form string ="Formulario de Misiones">
+                    <sheet>
+                        <h1><field name='name'/></h1>
+                        <group>
+                            <group>
+                                <field name="nave_id"/>
+                            </group>
+                            <group>
+                                <field name="fecha_de_lazamiento"/>
+                                <field name="fecha_de_regreso"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Miembros de la nave">
+                                <field name="miembros_de_la_nave"/>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

@@ -17,6 +17,8 @@ class Nave(models.Model):
     ancho=fields.Float(string='Ancho')
     largo=fields.Float(string='Largo')
     
+    mision_id=fields.One2many(comodel_name="nave.mision", inverse_name='nave_id', string='Misiones')
+    
     @api.constrains('ancho', 'largo')
     def _checar_ancho(self):
         if self.ancho > self.largo or self.ancho == self.largo:

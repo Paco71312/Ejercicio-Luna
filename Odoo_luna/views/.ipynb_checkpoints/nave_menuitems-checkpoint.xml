@@ -11,12 +11,26 @@
                 </p>
             </field>            
         </record>
+        
+        <record model ="ir.actions.act_window" id="mision_list_action">
+            <field name="name">Mision</field>
+            <field name="res_model">nave.mision</field>
+            <field name="view_mode">tree,form</field>
+            
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                   Crear una nueva mision
+                </p>
+            </field>
+        </record>
 
         <menuitem name="Programa espacial odoo"
                   id="menu_nave"
                   sequence="1"
                   web_icon="Odoo_luna,descripcion/nave.png"/>
-         <menuitem  id="menu_nave_sub1" name="Espacio"  parent="menu_nave" sequence="2"/>
-         <menuitem  id="menu_nave_sub2" name="Submenu"  parent="menu_nave_sub1" sequence="3" action="nave_list_action"/>
+        
+        <menuitem  id="menu_nave_sub1" name="Espacio"  parent="menu_nave" sequence="2"/>
+        <menuitem  id="menu_nave_sub2" name="Submenu"  parent="menu_nave_sub1" sequence="3" action="nave_list_action"/>
+        <menuitem  id="menu_nave_mision" name="Mision" parent="menu_nave_sub1" sequence="4" action="mision_list_action"/>          
     </data>
 </odoo>

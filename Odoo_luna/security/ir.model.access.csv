@@ -2,3 +2,5 @@ id,name,model_id/id,group_id/id,perm_read,perm_write,perm_create,perm_unlink
 nave_admin,nave admin,model_nave_espacial,grupo_nave_admin,1,1,1,1
 nave_solo_lectura,Nave Solo Lectura,model_nave_espacial,,1,0,0,0
 nave_solo_tripulante,nave tripulante,model_nave_espacial,grupo_nave_tripulacion,1,1,1,0
+mision_admin,Mision Admin,model_nave_mision,grupo_nave_admin,1,1,1,1
+mision_solo_lectura,Solo lectura de la mision,model_nave_mision,,1,0,0,0
