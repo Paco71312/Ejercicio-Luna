@@ -15,6 +15,10 @@ class Mision(models.Model):
     
     miembros_de_la_nave=fields.Many2many(comodel_name='res.partner',
                                  string='Miembros de la nave')
+    
     fecha_de_lazamiento=fields.Date(string='Fecha de Lanzamiento')
     fecha_de_regreso=fields.Date(string='Fecha de Regreso a la Tierra')
     
+    cantidad_combustible=fields.Float(string='Cantidad de combustible')
+    numero_de_motores=fields.Float(string='Cantidad de Motores')
+    seguridad=fields.Float(string='Numero de seguridad en la nave')
