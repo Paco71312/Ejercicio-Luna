@@ -29,5 +29,17 @@
                 </form>
             </field>
         </record>
+        <record model="ir.ui.view" id="mision_view_graph">
+            <field name="name">nave.mision.graph</field>
+            <field name="model">nave.mision</field>
+            <field name="arch" type="xml">
+                <graph type="bar">
+                    <field name="nave_id"/>
+                    <field name="cantidad_combustible"/>
+                    <field name="numero_de_motores"/> 
+                    <field name="seguridad"/>
+                </graph>
+            </field>
+        </record>
     </data>
 </odoo>
