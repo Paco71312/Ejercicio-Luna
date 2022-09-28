@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model= "ir.ui.view" id="view_project_form_inherit_nave">
+            <field name="name">project.task.form.inherit.nave</field>
+            <field name="model">project.task</field>
+            <field name="inherit_id" ref="project.view_task_form2"/>
+            <field name="arch"  type ="xml">
+                <xpath expr="//field[@ name='parent_id']" position="after">
+                    <field name="mision_id"/>
+                </xpath>
+                <xpath expr="//sheet//notebook" position="inside">
+                    <page string="Miembros de la nave" attrs="{'invisible':[('mision_id','=',False)]}">
+                        <field name="miembros_de_la_nave">
+                            <tree>
+                                <field name="name"/>
+                            </tree>
+                        </field>  
+                    </page>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
+            

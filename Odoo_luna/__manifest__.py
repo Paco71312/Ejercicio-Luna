@@ -9,8 +9,8 @@
     'author':'Paco',
     'version':'0.1',
     'category': 'Training',
-    'depends': ['base'],
-    'data':['security/nave_security.xml','security/ir.model.access.csv','views/nave_menuitems.xml','views/nave_views.xml','views/mision_views.xml',
+    'depends': ['project'],
+    'data':['security/nave_security.xml','security/ir.model.access.csv','views/nave_menuitems.xml','views/nave_views.xml','views/mision_views.xml','views/projects_views_inherit.xml',
         
     ],
     'demo':['demo/nave_demo.xml',
