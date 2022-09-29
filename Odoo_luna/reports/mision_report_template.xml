@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!--creacion de accion de informe /reporte-->
+     <record id='report_mision' model="ir.actions.report">
+        <field name="name">Reporte de Mision</field>
+        <field name="model">nave.mision</field>
+        <field name="report_type">qweb-html</field>
+        <field name="report_name">Odoo_luna.report_mision_document</field>
+        <field name="report_file">Odoo_luna.report_mision</field>
+        <field name="binding_model_id" ref="model_nave_mision"/>
+        <field name="binding_type">report</field>
+    </record>
+    <template id="report_mision_document">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <h2 t-field="doc.name" class="mt16"/>
+                        <div class="row mt32 mb32" id ="Informacion de reporte de Mision">
+                            <div t-if="doc.name" class="col-auto mw-100 mb-2">  
+                                <strong> Nombre de la Mision</strong>
+                                <span t-field="doc.name"/>
+                            </div>
+                            <div t-if="doc.fecha_de_lazamiento" class="col-auto mw-100 mb-2">  
+                                <strong> Fecha de Lanzamiento:</strong>
+                                <span t-field="doc.fecha_de_lazamiento"/>
+                            </div>
+                            <div t-if="doc.fecha_de_regreso" class="col-auto mw-100 mb-2">  
+                                <strong> Fecha de Regreso a la Tierra:</strong>
+                                <span t-field="doc.fecha_de_regreso"/>
+                            </div>
+                            <div t-if="doc.cantidad_combustible" class="col-auto mw-100 mb-2">  
+                                <strong>Cantidad de Combustible [L.]:</strong>
+                                <span t-field="doc.cantidad_combustible"/>
+                            </div>
+                            <div t-if="doc.numero_de_motores" class="col-auto mw-100 mb-2">  
+                                <strong>Numero de Motores:</strong>
+                                <span t-field="doc.numero_de_motores"/>
+                            </div>
+                        </div>
+                        <h4>Miembros de la nave</h4>
+                        <table class="table teble-sm o_main_table">
+                            <thead>
+                                <th name="th_name">Name</th> 
+                                <th name="th_phone">Phone</th>
+                                <th name="th_email">Email</th> 
+                            </thead>
+                            <tbody>
+                                <t t-foreach="doc.miembros_de_la_nave" t-as="miembros">
+                                    <tr>
+                                         <td t-if="miembros.name" name="td_name">
+                                            <span t-field="miembros.name"/>
+                                        </td>
+                                        <td t-if="miembros.phone" name="td_phone">
+                                            <span t-field="miembros.phone"/>
+                                        </td>
+                                        <td t-if="miembros.email" name="td_email">
+                                            <span t-field="miembros.email"/>
+                                        </td>
+                                    </tr>
+                                </t>
+                            </tbody>
+                        </table>
+                    </div>
+                </t>
+            </t>
+        </t>    
+    </template>
+</odoo>
