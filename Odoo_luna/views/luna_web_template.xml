@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="espacial_website">
+            <t t-call="website.layout">
+                <t t-set="title">Naves Espaciales</t>
+                <div class="oe_structure">
+                    <div class="container">
+                        <h1>Espaciales</h1>
+                        <t t-foreach="espaciales" t-as="espacial">
+                            <h3>
+                                <t t-esc="espacial.id"/>
+                                <t t-esc="espacial.name"/>
+                            </h3>
+                            <p>Tipo de Cobustible:
+                                <span t-field="espacial.tipo_de_combustible"/>
+                            </p>
+                            <strong>Misiones</strong>
+                            <t t-foreach="espaciales.mision_id" t-as="mision">
+                                <p>
+                                    <a t-attf-href="/nave/{{ slug(mision)}}">
+                                        <t t-esc="mision.name"/>
+                                    </a>
+                                </p>
+                                <p>Ultima modficacion:
+                                        <i t-field="mision.write_date" t-field-options='{"format": "long"}'/>                                       
+                                </p>
+                            </t>
+                            <t t-if="not espacial.mision_id">
+                                <p>No hay misisiones ene esta Nave</p>
+                            </t>
+                        </t>
+                    </div>
+                </div>
+            </t>
+        </template> 
+        
+        <template id="mision_website">
+            <t t-call="website.layout">
+                <t t-set="title">Misiones</t>
+                <div class="oe_structure">
+                    <div class="container">
+                        <h3 t-field="mision.name"/>
+                        <p>Ultima modficacion:
+                                        <i t-field="mision.write_date" t-field-options='{"format": "long"}'/>                                       
+                        </p>
+                        <p>Mision:
+                            <t t-esc="mision.nave_id.name"/>
+                        </p>
+                        <h3>Integrantes de la nave:</h3>
+                        <ul>
+                            <t t-foreach="mision.miembros_de_la_nave" t-as="miembros">
+                                <li>
+                                    <span t-field="miembros.name"/>
+                                </li>
+                            </t>
+                        </ul>
+                    </div>
+                </div>
+            </t>
+        </template>
+    </data>
+</odoo>
